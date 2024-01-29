@@ -23,7 +23,7 @@ class CommandGive(plugin: EcoPlugin) : Subcommand(plugin, "give", "ecoitems.comm
     override fun onExecute(sender: CommandSender, args: List<String>) {
         val player = notifyPlayerRequired(args.getOrNull(0), "invalid-player")
 
-        val ecoItem = notifyNull(EcoItems.getByID(args.getOrNull(1)), "invalid-item")
+        val ecoItem = notifyNull(EcoItems.getByID(args.getOrNull(1)), "invalid-item")!!
 
         val amount = args.getOrNull(2)?.toIntOrNull() ?: 1
 
